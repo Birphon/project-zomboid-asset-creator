@@ -19,9 +19,9 @@ var folder_manager_button: Button
 var folder_selector_button: Button
 
 # Scenes
-var folder_selector_scene: PackedScene = preload("res://scenes/folder_selector.tscn")
+var folder_selector_scene: PackedScene = preload("res://pz_file_loader/scenes/folder_selector.tscn")
 var folder_selector_instance: Control = null
-var folder_manager_scene: PackedScene = preload("res://scenes/folder_manager.tscn")
+var folder_manager_scene: PackedScene = preload("res://pz_file_loader/scenes/folder_manager.tscn")
 var folder_manager_instance: Control = null
 
 # Status management
