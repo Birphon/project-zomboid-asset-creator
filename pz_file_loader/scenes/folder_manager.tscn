@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bumeuwg0io3e"]
+
+[ext_resource type="Script" uid="uid://dvq76gxiun2e8" path="res://pz_file_loader/scripts/folder_manager.gd" id="1_l85ka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l85ka"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+
+[node name="FolderManager" type="Control" unique_id=357987512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l85ka")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=993561108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.69803923)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1040179120]
+custom_minimum_size = Vector2(650, 550)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -97.5
+offset_right = 20.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l85ka")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1174456511]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1305686161]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TileLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=430989160]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1187710649]
+layout_mode = 2
+
+[node name="RootFolderSection" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=135401274]
+layout_mode = 2
+
+[node name="RootLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/RootFolderSection" unique_id=934018207]
+layout_mode = 2
+
+[node name="RootPathLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/RootFolderSection" unique_id=186657114]
+layout_mode = 2
+
+[node name="ChangeRootButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/RootFolderSection" unique_id=2119286717]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1883732120]
+layout_mode = 2
+
+[node name="SubfolderSection" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=702003254]
+layout_mode = 2
+
+[node name="SubfolderLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/SubfolderSection" unique_id=888848724]
+layout_mode = 2
+
+[node name="SubfolderContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SubfolderSection" unique_id=1308165127]
+layout_mode = 2
+
+[node name="SubfolderListContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SubfolderSection/SubfolderContainer" unique_id=2083981690]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="SubfolderList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/SubfolderSection/SubfolderContainer/SubfolderListContainer" unique_id=1073530018]
+layout_mode = 2
+
+[node name="AddSubfolderButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SubfolderSection/SubfolderContainer" unique_id=744355490]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=663753017]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=820638712]
+layout_mode = 2
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1258038113]
+layout_mode = 2
+
+[node name="ReloadButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer" unique_id=334892976]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer" unique_id=88654395]
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RootFolderSection/ChangeRootButton" to="." method="_on_change_root_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/SubfolderSection/SubfolderContainer/AddSubfolderButton" to="." method="_on_add_subfolder_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ButtonsContainer/CloseButton" to="." method="_on_close_button_pressed"]
