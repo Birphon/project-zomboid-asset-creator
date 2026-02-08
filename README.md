@@ -31,3 +31,4 @@ Note: all editing of files will be made as a "copy" to the users mod structure
 
 ## Change Log
 08/02/2026 - Started coding the project, started with a file loader system that will hopefully load all of the Scripts
+09/02/2026 - Nuked the project. Restarting the project from scratch. Needing to simplify things down first.
